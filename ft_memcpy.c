@@ -1,24 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sdadak <sdadak@student.42istanbul.com      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/14 10:51:51 by sdadak            #+#    #+#             */
-/*   Updated: 2025/06/16 17:25:21 by sdadak           ###   ########.fr       */
+/*   Created: 2025/06/16 12:17:11 by sdadak            #+#    #+#             */
+/*   Updated: 2025/06/16 12:30:36 by sdadak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
 
-int	main()
+void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	//char	d[] = "";
-	//char	s[] = "";
-	printf("%s\n", (char *)ft_memmove("asd","asd",0));
-	//printf("%s", s);
+	size_t	i;
+
+	i = 0;
+	while (i < n)
+	{
+		((unsigned char *)dest)[i] = ((unsigned const char *)src)[i];
+		i++;
+	}
+	return (dest);
 }

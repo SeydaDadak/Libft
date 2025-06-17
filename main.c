@@ -6,7 +6,7 @@
 /*   By: sdadak <sdadak@student.42istanbul.com      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/14 10:51:51 by sdadak            #+#    #+#             */
-/*   Updated: 2025/06/16 17:25:21 by sdadak           ###   ########.fr       */
+/*   Updated: 2025/06/17 13:14:46 by sdadak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,9 @@
 
 int	main()
 {
-	//char	d[] = "";
-	//char	s[] = "";
-	printf("%s\n", (char *)ft_memmove("asd","asd",0));
-	//printf("%s", s);
+	char	d[10] = "deneme";
+	char	s[10] = "asdfghj";
+	printf("%zu\n%s", ft_strlcpy(d,"lorem ipsum dolor sit amet",0), d);
+	
+	//printf("\n%d\n%s", strlcpy(s,"aasd",10), s);
 }

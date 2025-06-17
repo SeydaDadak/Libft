@@ -1,35 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sdadak <sdadak@student.42istanbul.com      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/16 15:40:17 by sdadak            #+#    #+#             */
-/*   Updated: 2025/06/17 11:43:51 by sdadak           ###   ########.fr       */
+/*   Created: 2025/06/17 16:55:12 by sdadak            #+#    #+#             */
+/*   Updated: 2025/06/17 16:57:26 by sdadak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-void	*ft_memmove(void *dest, const void *src, size_t n)
+int	ft_tolower(int c)
 {
-	unsigned char		*d;
-	unsigned const char	*s;
-
-	d = dest;
-	s = src;
-	if (!dest && !src)
-		return (NULL);
-	if (dest > src)
-	{
-		while (n > 0)
-		{
-			n--;
-			d[n] = s[n];
-		}
-	}
-	else
-		ft_memcpy(d, s, n);
-	return (d);
+	if (c >= 65 && c <= 90)
+		return (c + 32);
+	return (c);
 }

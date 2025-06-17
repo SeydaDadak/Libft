@@ -1,35 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sdadak <sdadak@student.42istanbul.com      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/16 15:40:17 by sdadak            #+#    #+#             */
-/*   Updated: 2025/06/17 11:43:51 by sdadak           ###   ########.fr       */
+/*   Created: 2025/06/17 17:01:59 by sdadak            #+#    #+#             */
+/*   Updated: 2025/06/17 20:06:32 by sdadak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dest, const void *src, size_t n)
+char	*ft_strchr(const char *s, int c)
 {
-	unsigned char		*d;
-	unsigned const char	*s;
+	size_t	i;
 
-	d = dest;
-	s = src;
-	if (!dest && !src)
-		return (NULL);
-	if (dest > src)
+	i = 0;
+	while (s[i])
 	{
-		while (n > 0)
-		{
-			n--;
-			d[n] = s[n];
-		}
+		if (s[i] == (unsigned char)c)
+			return ((char *)&s[i]);
+		i++;
 	}
-	else
-		ft_memcpy(d, s, n);
-	return (d);
+	if (s[i] == c)
+		return ((char *)&s[i]);
+	return (NULL);
 }

@@ -1,27 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sdadak <sdadak@student.42istanbul.com      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/17 19:41:22 by sdadak            #+#    #+#             */
-/*   Updated: 2025/06/18 12:33:38 by sdadak           ###   ########.fr       */
+/*   Created: 2025/06/18 12:35:52 by sdadak            #+#    #+#             */
+/*   Updated: 2025/06/18 15:15:40 by sdadak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	size_t	i;
+	size_t			i;
+	unsigned char	*src1;
+	unsigned char	*src2;
 
 	i = 0;
-	while (i < n && s1[i] && s1[i] == s2[i])
+	src1 = (unsigned char *)s1;
+	src2 = (unsigned char *)s2;
+	while (i < n)
 	{
+		if (src1[i] != src2[i])
+			return (src1[i] - src2[i]);
 		i++;
 	}
-	if (i == n)
-		return (0);
-	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
+	return (0);
 }

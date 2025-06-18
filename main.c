@@ -6,7 +6,7 @@
 /*   By: sdadak <sdadak@student.42istanbul.com      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/14 10:51:51 by sdadak            #+#    #+#             */
-/*   Updated: 2025/06/17 13:14:46 by sdadak           ###   ########.fr       */
+/*   Updated: 2025/06/18 16:23:44 by sdadak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,8 @@
 
 int	main()
 {
-	char	d[10] = "deneme";
-	char	s[10] = "asdfghj";
-	printf("%zu\n%s", ft_strlcpy(d,"lorem ipsum dolor sit amet",0), d);
-	
-	//printf("\n%d\n%s", strlcpy(s,"aasd",10), s);
+	char	b[] = "see FF your FF return FF now FF";
+	char	l[] = "FF";
+
+	printf("%s", ft_strnstr(b, l, 200));
 }

@@ -1,25 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sdadak <sdadak@student.42istanbul.com      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/14 10:51:51 by sdadak            #+#    #+#             */
-/*   Updated: 2025/06/25 13:28:41 by sdadak           ###   ########.fr       */
+/*   Created: 2025/06/23 20:41:53 by sdadak            #+#    #+#             */
+/*   Updated: 2025/06/23 21:22:18 by sdadak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
 
-int	main()
+char	*ft_strdup(const char *s)
 {
-	char	b[] = "lorem ipsum dolor sit amet";
-	char	t[] = "te";
-	
-	char *ptr = ft_strtrim(b, t);
-	printf("%s", ptr);
+	char	*ptr;
+	size_t	len;
+	size_t	i;
+
+	len = ft_strlen(s);
+	ptr = malloc(len + 1);
+	i = 0;
+	if (!s || !ptr)
+		return (NULL);
+	while (i < len)
+	{
+		ptr[i] = s[i];
+		i++;
+	}
+	ptr[i] = '\0';
+	return (ptr);
 }

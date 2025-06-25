@@ -6,7 +6,7 @@
 /*   By: sdadak <sdadak@student.42istanbul.com      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/17 17:01:59 by sdadak            #+#    #+#             */
-/*   Updated: 2025/06/17 20:06:32 by sdadak           ###   ########.fr       */
+/*   Updated: 2025/06/23 20:37:54 by sdadak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ char	*ft_strchr(const char *s, int c)
 			return ((char *)&s[i]);
 		i++;
 	}
-	if (s[i] == c)
+	if (s[i] == (unsigned char)c)
 		return ((char *)&s[i]);
 	return (NULL);
 }

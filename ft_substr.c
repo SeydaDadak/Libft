@@ -1,25 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sdadak <sdadak@student.42istanbul.com      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/14 10:51:51 by sdadak            #+#    #+#             */
-/*   Updated: 2025/06/25 13:28:41 by sdadak           ###   ########.fr       */
+/*   Created: 2025/06/24 12:24:02 by sdadak            #+#    #+#             */
+/*   Updated: 2025/06/24 13:18:23 by sdadak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
 
-int	main()
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char	b[] = "lorem ipsum dolor sit amet";
-	char	t[] = "te";
-	
-	char *ptr = ft_strtrim(b, t);
-	printf("%s", ptr);
+	size_t	i;
+	size_t	slen;
+	char	*ptr;
+
+	if (!s)
+		return (NULL);
+	slen = ft_strlen(s);
+	if (start > slen)
+		len = 0;
+	if (len > slen - start)
+		len = slen - start;
+	i = 0;
+	ptr = malloc(len + 1);
+	if (ptr == NULL)
+		return (NULL);
+	while (i < len)
+	{
+		ptr[i] = s[start];
+		start++;
+		i++;
+	}
+	ptr[i] = '\0';
+	return (ptr);
 }

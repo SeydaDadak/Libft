@@ -6,7 +6,7 @@
 /*   By: sdadak <sdadak@student.42istanbul.com      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/14 10:51:51 by sdadak            #+#    #+#             */
-/*   Updated: 2025/06/25 13:28:41 by sdadak           ###   ########.fr       */
+/*   Updated: 2025/06/26 20:49:13 by sdadak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,13 @@
 
 int	main()
 {
-	char	b[] = "lorem ipsum dolor sit amet";
-	char	t[] = "te";
-	
-	char *ptr = ft_strtrim(b, t);
-	printf("%s", ptr);
+	char **arr;
+	size_t	j = 0;
+
+	ft_split("Seyda dadak deneme", ' ');
+	/*while (arr[j])
+	{
+		printf("%s", arr[j]);
+		j++;
+	}*/
 }

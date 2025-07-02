@@ -42,8 +42,13 @@ SRCS = ft_isalpha.c \
 
 OBJS = $(SRCS:.c=.o)
 
-BONUS =
-
+BONUS = ft_lstnew_bonus.c \
+	ft_lstadd_front_bonus.c \
+	ft_lstsize_bonus.c \
+	ft_lstlast_bonus.c \
+	ft_lstadd_back_bonus.c \
+	ft_lstdelone_bonus.c \
+	
 BNSOBJ = $(BONUS:.c=.o)
 
 all : $(NAME)
@@ -51,8 +56,8 @@ all : $(NAME)
 $(NAME) : $(OBJS)
 	ar rsc $(NAME) $(OBJS)
 
-@bonus : $(NAME) $(BNSOBJ)
-	@ar rsc $(NAME) $(OBJS) $(BNSOBJ)
+bonus : $(NAME) $(BNSOBJ)
+	ar rsc $(NAME) $(OBJS) $(BNSOBJ)
 
 %.o : %.c
 	$(CC) $(CFLAGS) -c $< -o $@
